@@ -1,0 +1,815 @@
+﻿<style>
+    body {
+        margin: 0;
+        font-family: 'Baskerville Old Face',serif;
+        background-color: #f3e9dc; /* beige */
+    }
+
+    .slide {
+        width: 80%;
+        margin: 40px auto;
+        background: #fffaf3;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-size: 25px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 15px;
+        margin: 20px 0;
+    }
+
+    .btn {
+        background-color: #3e2f23;
+        color: white;
+        padding: 12px 25px;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .btn:hover {
+            background-color: #6b4f3a;
+        }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sasaki Izakaya Ramen</title>
+</head>
+<body>
+    <div class="slide">
+        <div class="logo">佐々木</div>
+        <h1>Sasaki Izakaya Ramen</h1>
+        <div class="subtitle">Autentica cucina giapponese</div>
+        <p style="font-size: 20px;">
+            Sasaki Izakaya Ramen è un ristorante specializzato in cucina giapponese situato nel cuore di Torino. <br />
+            La nostra azienda si dedica alla nutrizione e alla ristorazione, offrendo ai nostri clienti piatti deliziosi e di alta qualità. <br />
+            Ciò che ci contraddistingue è il nostro cibo, preparato con ingredienti freschi e di prima scelta e i nostri chef altamente professionali che portano avanti la tradizione cucina giapponese e creano piatti deliziosi e autentici.
+            L'atmmosfera rilassante del nostro locale ti farà sentire come se fossi veramente in Giappone.
+        </p>
+        <asp:Button runat="server" Text="Scopri il Menù" CssClass="btn" PostBackUrl="Menu.aspx" />
+        <asp:Button runat="server" Text="Contattaci" CssClass="btn" PostBackUrl="Contatti.aspx" />
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contatti</title>
+    <style>
+        .contatto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .contatto p {
+                font-size: 20px;
+                text-align: left;
+                width: 100%;
+                max-width: 500px;
+                margin: 10px 0;
+            }
+
+            .contatto a {
+                color: #0077cc;
+                text-decoration: none;
+            }
+
+                .contatto a:hover {
+                    text-decoration: underline;
+                }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        iframe {
+            border: 0;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+
+        <h1>Contatti</h1>
+
+        <div class="contatto">
+            <p><strong>📍 Indirizzo:</strong> Corso Guglielmo Marconi 7, 10125 Torino</p>
+            <p><strong>📞 Telefono:</strong> <a href="tel:+393242624058">+39 324 262 4058</a></p>
+            <p><strong>📷 Instagram:</strong> <a href="https://www.instagram.com/sasaki_torino/" target="_blank">@sasaki_torino</a></p>
+            <p><strong>🌐 Prenotazioni:</strong> <a href="https://prenotazioni.cooperto.it/in/4e957809-a8b3-4f" target="_blank">Prenota ora</a></p>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+
+        <h2>📍 Dove trovarci</h2>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5636.842830305655!2d7.6757153765091095!3d45.056961771070284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d19b4cd9a17%3A0x862a3230dbe66c12!2sSASAKI-Ramen-Izakaya!5e0!3m2!1sit!2sit!4v1774585106775!5m2!1sit!2sit"
+                height="350" allowfullscreen="" loading="lazy">
+        </iframe>
+
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #aaa;
+            font-size: 25px;
+        }
+
+        .nome {
+            text-align: left;
+            font-family: 'Baskerville Old Face',serif;
+            font-weight: bold;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="slide">
+        <h1><strong>🍱 Menù Pranzo</strong></h1>
+
+        <h1><strong>Menù Riso Pranzo</strong></h1>
+        <p style="font-size: 20px;">Coperto + Riso + Zuppa di miso + Insalata mista</p>
+        <div class="menu-item">
+            <span class="nome">Cotoletta di maiale</span>
+            <span class="prezzo">€12.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tempura di gamberi</span>
+            <span class="prezzo">€13.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Pollo fritto giapponese</span>
+            <span class="prezzo">€12.90</span>
+        </div>
+
+        <h1><strong>Menù Ramen Pranzo</strong></h1>
+        <p style="font-size: 20px;">Coperto + Insalata mista</p>
+
+        <div class="menu-item">
+            <span class="nome">Tonkotsu Ramen classico</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tonkotsu Ramen con Karaage</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Ramen vegetariano</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #aaa;
+            font-size: 25px;
+        }
+
+        .nome {
+            text-align: left;
+            font-family: 'Baskerville Old Face',serif;
+            font-weight: bold;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>🍽️ Menù alla carta</h1>
+        <h1>Set Omakase — €25.90</h1>
+        <p style="font-size: 20px;">
+            Il set omakase è un percorso di degustazione con 9 specialità giapponesi diverse, scelte ogni giorno dallo chef in base alla freschezza degli ingredienti.
+            Un'esperienza completa per assaggiare più sapori in un unico piatto
+        </p>
+        <img src="omakase.jpg" />
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #aaa;
+            font-size: 25px;
+        }
+
+        .nome {
+            text-align: left;
+            font-family: 'Baskerville Old Face',serif;
+            font-weight: bold;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>🥢 Piatti di accompagnamento</h1>
+        <p style="font-size: 20px;">
+            Il nostro menù offre una varietà di piatti della cucina giapponese, perfetti per soddisfare ogni palato e desiderio.<br />
+            I nostri prezzi variano a seconda del piatto scelto, ma garantiamo sempre un ottimo rapporto qualità-prezzo
+        </p>
+
+        <div class="menu-item">
+            <span class="nome">Gyoza maiale classico</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Gyoza maiale piccante</span>
+            <span class="prezzo">€5.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Gyoza maiale teriyaki</span>
+            <span class="prezzo">€5.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Gyoza verdure</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Alghe wakame</span>
+            <span class="prezzo">€4.80</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Edamame</span>
+            <span class="prezzo">€3.80</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Takoyaki 5pz</span>
+            <span class="prezzo">€5.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Purè patate</span>
+            <span class="prezzo">€4.50</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Funghi misti in tempura</span>
+            <span class="prezzo">€5.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Karaage</span>
+            <span class="prezzo">€5.80</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Alette di pollo fritte giapponesi</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Gamberi in tempura con salsa tartara</span>
+            <span class="prezzo">€3.00</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tofu fritto</span>
+            <span class="prezzo">€3.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Insalata di baby polpo</span>
+            <span class="prezzo">€6.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Spiedini giapponesi di pollo e cipollotto</span>
+            <span class="prezzo">€3.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Insalata di vongole al wasabi</span>
+            <span class="prezzo">€6.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Zuppa di miso</span>
+            <span class="prezzo">€1.50</span>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .nome {
+            text-align: left;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="slide">
+
+        <h1><strong>🍜 Tonkotsu Ramen</strong></h1>
+        <p style="font-size: 20px;">Pasta giapponese con brodo cremoso di ossa di maiale, cotto a lungo, dal sapore intenso e profondo</p>
+
+        <div class="menu-item">
+            <span class="nome">Tonkotsu ramen classico</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tonkotsu ramen senza glutine</span>
+            <span class="prezzo">€15.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tonkotsu ramen piccante</span>
+            <span class="prezzo">€15.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tonkotsu ramen con karaage</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <h1><strong>🍜 Ramen vegetariano</strong></h1>
+        <p style="font-size: 20px;">Pasta giapponese vegetariano leggero e saporito con brodo vegetale e verdure di stagione</p>
+
+        <div class="menu-item">
+            <span class="nome">Ramen vegetariano originale</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Ramen vegetariano senza glutine</span>
+            <span class="prezzo">€15.90</span>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .nome {
+            text-align: left;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1><strong>🍚 Donburi</strong></h1>
+        <p style="font-size: 20px;">Piatto giapponese a base di riso caldo, servito con diversi condimenti sopra, come carne, pesce o verdure</p>
+
+        <div class="menu-item">
+            <span class="nome">Donburi con anguilla</span>
+            <span class="prezzo">€19.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Donburi con karaage</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Donburi con curry e cotoletta di maiale</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Donburi con curry e verdure</span>
+            <span class="prezzo">€14.90</span>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .nome {
+            text-align: left;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1><strong>🍰 Dessert</strong></h1>
+
+        <div class="menu-item">
+            <span class="nome">Budino giapponese al caramello</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Dorayaki</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Sanshoku Dango</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Taiyaki</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Gelato al matcha/sesamo</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Torta Hokkaido al matcha</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Daifuku</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tiramisù al matcha</span>
+            <span class="prezzo">€4.90</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Mochi gelato</span>
+            <span class="prezzo">€6.90</span>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-section {
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .nome {
+            text-align: left;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            border-bottom: 1px dotted #aaa;
+            padding-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+
+        <h1>🥤 Bevande</h1>
+
+        <div class="menu-section">
+            <h1>Birra</h1>
+            <div class="menu-item">
+                <span class="nome">Asahi</span>
+                <span class="prezzo">€6.00/330ml</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Kirin</span>
+                <span class="prezzo">€6.00/330ml</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Sapporo</span>
+                <span class="prezzo">€7.00/500ml</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h1>Vino</h1>
+            <div class="menu-item">
+                <span class="nome">Calice di vino bianco Anthìlia</span>
+                <span class="prezzo">€5.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Calice di vino rosso Sedara</span>
+                <span class="prezzo">€5.00</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Bottiglia di vino Donnafugata</span>
+                <span class="prezzo">€20.00</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h1>Acqua</h1>
+            <div class="menu-item">
+                <span class="nome">Acqua naturale/frizzante</span>
+                <span class="prezzo">€2.00/500ml</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h1>Tè</h1>
+            <div class="menu-item">
+                <span class="nome">Tè verde caldo</span>
+                <span class="prezzo">€4.00/teiera</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Tè gelsomino caldo</span>
+                <span class="prezzo">€4.00/teiera</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h1>Bibita</h1>
+            <div class="menu-item">
+                <span class="nome">Tè limone/pesca</span>
+                <span class="prezzo">€3.50/330ml</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Fanta</span>
+                <span class="prezzo">€3.50/330ml</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Sprite</span>
+                <span class="prezzo">€3.50/330ml</span>
+            </div>
+            <div class="menu-item">
+                <span class="nome">Coca/Coca zero</span>
+                <span class="prezzo">€3.50/330ml</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <div class="menu-item">
+                <span class="nome"><strong>Caffè</strong></span>
+                <span class="prezzo"><strong>€1.50</strong></span>
+            </div>
+            <div class="menu-item">
+                <span class="nome"><strong>Amaro</strong></span>
+                <span class="prezzo"><strong>€4.50</strong></span>
+            </div>
+            <div class="menu-item">
+                <span class="nome"><strong>Grappa</strong></span>
+                <span class="prezzo"><strong>€4.50</strong></span>
+            </div>
+        </div>
+
+        <asp:Button runat="server" Text="Home" CssClass="btn" PostBackUrl="Default.aspx" />
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menù</title>
+    <style>
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .nome {
+            text-align: left;
+        }
+
+        .prezzo {
+            text-align: right;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+
+        <h1>🍶 Sake</h1>
+
+        <div class="menu-item">
+            <span class="nome">Sake di prugna caldo</span>
+            <span class="prezzo">€5.00/bricco</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Sake di riso caldo</span>
+            <span class="prezzo">€5.00/bricco</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Hakutsuru</span>
+            <span class="prezzo">€8.00/bricco €15.00/300ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Yamada nishiki</span>
+            <span class="prezzo">€8.00/bricco €15.00/300ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Sayuri</span>
+            <span class="prezzo">€8.00/bricco €15.00/300ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Yuzuko</span>
+            <span class="prezzo">€22.00/bricco €58.00/720ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Rock'n Plum</span>
+            <span class="prezzo">€12.00/bricco €42.00/720ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Seifuku-ginger lemon</span>
+            <span class="prezzo">€22.00/bricco €58.00/720ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Gokyo five-yellow</span>
+            <span class="prezzo">€13.00/bricco €45.00/720ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Matcha-umeshu</span>
+            <span class="prezzo">€12.00/bricco €42.00/500ml</span>
+        </div>
+
+        <div class="menu-item">
+            <span class="nome">Tshukushi-umeshu</span>
+            <span class="prezzo">€18.00/bricco €50.00/720ml</span>
+        </div>
+
+    </div>
+</body>
+</html>
